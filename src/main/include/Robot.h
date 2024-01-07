@@ -6,6 +6,10 @@
 
 #include <frc/TimedRobot.h>
 
+#include "FFAutotuner/FFAutotuner.h"
+
+#include "ShuffleboardSender/ShuffleboardSender.h"
+
 #include "Shooter/Flywheel.h"
 
 class Robot : public frc::TimedRobot {
@@ -31,5 +35,8 @@ class Robot : public frc::TimedRobot {
     //Flywheel Testing
     Flywheel flywheel_{"Flywheel", true, true};
 
-    
+    FFAutotuner flywheelTuner_{"FlywheelTuner", FFAutotuner::SIMPLE, 0.0, 6.18, 0.5, 1.0};
+    bool isTuning_;
+
+    ShuffleboardSender shuff_;
 };

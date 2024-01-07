@@ -4,9 +4,13 @@
 
 #include "Robot.h"
 
-void Robot::RobotInit() {}
+void Robot::RobotInit() {
+  shuff_.add("Auto Tune", &isTuning_, {5,5,0,0}, true);
+}
+
 void Robot::RobotPeriodic() {
   flywheel_.Periodic();
+  shuff_.update(true);
 }
 
 void Robot::AutonomousInit() {}
@@ -14,6 +18,11 @@ void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {}
 void Robot::TeleopPeriodic() {
+  if(isTuning_){
+    flywheelTuner_.setPose(flywheel_.GetPose());
+    double volts = flywheelTuner_.getVoltage();
+    flywheel_.SetVoltage(volts);
+  }
   flywheel_.TeleopPeriodic();
 }
 
