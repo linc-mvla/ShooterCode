@@ -5,13 +5,17 @@
 #include "Robot.h"
 
 void Robot::RobotInit() {}
-void Robot::RobotPeriodic() {}
+void Robot::RobotPeriodic() {
+  flywheel_.Periodic();
+}
 
 void Robot::AutonomousInit() {}
 void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {}
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+  flywheel_.TeleopPeriodic();
+}
 
 void Robot::DisabledInit() {}
 void Robot::DisabledPeriodic() {}

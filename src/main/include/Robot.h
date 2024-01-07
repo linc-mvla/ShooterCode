@@ -6,23 +6,30 @@
 
 #include <frc/TimedRobot.h>
 
+#include "Shooter/Flywheel.h"
+
 class Robot : public frc::TimedRobot {
- public:
-  void RobotInit() override;
-  void RobotPeriodic() override;
+  public:
+    void RobotInit() override;
+    void RobotPeriodic() override;
 
-  void AutonomousInit() override;
-  void AutonomousPeriodic() override;
+    void AutonomousInit() override;
+    void AutonomousPeriodic() override;
 
-  void TeleopInit() override;
-  void TeleopPeriodic() override;
+    void TeleopInit() override;
+    void TeleopPeriodic() override;
 
-  void DisabledInit() override;
-  void DisabledPeriodic() override;
+    void DisabledInit() override;
+    void DisabledPeriodic() override;
 
-  void TestInit() override;
-  void TestPeriodic() override;
+    void TestInit() override;
+    void TestPeriodic() override;
 
-  void SimulationInit() override;
-  void SimulationPeriodic() override;
+    void SimulationInit() override;
+    void SimulationPeriodic() override;
+  private:
+    //Flywheel Testing
+    Flywheel flywheel_{"Flywheel", true, true};
+
+    
 };
