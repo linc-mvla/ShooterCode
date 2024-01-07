@@ -1,5 +1,7 @@
 #include "Util/VelocityProfile.h"
 
+#include "Util/Util.h"
+
 /**
  * Constructors
 */
